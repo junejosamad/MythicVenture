@@ -1,6 +1,7 @@
 package pk.com.bytecraft.mythicventure
 
-import android.content.Intent
+import android.annotation.SuppressLint
+import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,19 +9,17 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-
-var character: String = ""
-
-class MainActivity : AppCompatActivity() {
-
+import androidx.core.content.ContextCompat
+class Characters : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId", "UseCompatLoadingForDrawables")
     @RequiresApi(Build.VERSION_CODES.R)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.activity_characters)
 
         // For devices running on Android 11 (API level 30) and above
         val windowInsetsController = window.insetsController
@@ -35,23 +34,29 @@ class MainActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility =
             (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                     View.SYSTEM_UI_FLAG_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            )
 
-        val startGame:Button = findViewById(R.id.startGame)
-        val character:Button = findViewById(R.id.characters)
-        val inventory:Button = findViewById(R.id.inventory)
-        val setting:Button = findViewById(R.id.setting)
-        val exitGame:Button = findViewById(R.id.exit)
+        val warrior:ImageView = findViewById(R.id.warrior)
+        val mage:ImageView = findViewById(R.id.mage)
+        val rogue:ImageView = findViewById(R.id.rogue)
 
-        exitGame.setOnClickListener(){
-            Toast.makeText(this, "Game Exited...", Toast.LENGTH_SHORT).show()
-            finish()
+        warrior.setOnClickListener(){
+            character = "Warrior"
+            Toast.makeText(this, "$character Selected", Toast.LENGTH_SHORT).show()
         }
 
-        character.setOnClickListener(){
-
-            startActivity(Intent(this, Characters::class.java))
-
+        mage.setOnClickListener(){
+            character = "Mage"
+            Toast.makeText(this, "$character Selected", Toast.LENGTH_SHORT).show()
         }
+
+        rogue.setOnClickListener(){
+            character = "Rogue"
+            Toast.makeText(this, "$character Selected", Toast.LENGTH_SHORT).show()
+        }
+
+
+
     }
 }
