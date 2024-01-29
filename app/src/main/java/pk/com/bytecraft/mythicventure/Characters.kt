@@ -40,20 +40,24 @@ class Characters : AppCompatActivity() {
         val warrior:ImageView = findViewById(R.id.warrior)
         val mage:ImageView = findViewById(R.id.mage)
         val rogue:ImageView = findViewById(R.id.rogue)
+        val close:ImageButton = findViewById(R.id.close)
+        close.setOnClickListener{
+            finish()
+        }
 
         warrior.setOnClickListener(){
-            character = "Warrior"
-            Toast.makeText(this, "$character Selected", Toast.LENGTH_SHORT).show()
+            characters = "Warrior"
+            Toast.makeText(this, "$characters Selected", Toast.LENGTH_SHORT).show()
         }
 
         mage.setOnClickListener(){
-            character = "Mage"
-            Toast.makeText(this, "$character Selected", Toast.LENGTH_SHORT).show()
+            characters = "Mage"
+            Toast.makeText(this, "$characters Selected", Toast.LENGTH_SHORT).show()
         }
 
         rogue.setOnClickListener(){
-            character = "Rogue"
-            Toast.makeText(this, "$character Selected", Toast.LENGTH_SHORT).show()
+            characters = "Rogue"
+            Toast.makeText(this, "$characters Selected", Toast.LENGTH_SHORT).show()
         }
 
 

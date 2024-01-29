@@ -11,7 +11,10 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 
-var character: String = ""
+var characters: String? = ""
+var enemy:String? = ""
+var unlockLevels:Int = 0
+var playerName:String? = ""
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +39,9 @@ class MainActivity : AppCompatActivity() {
             (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                     View.SYSTEM_UI_FLAG_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
-
+        if(playerName == ""){
+            
+        }
         val startGame:Button = findViewById(R.id.startGame)
         val character:Button = findViewById(R.id.characters)
         val inventory:Button = findViewById(R.id.inventory)
@@ -52,6 +57,14 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(Intent(this, Characters::class.java))
 
+        }
+
+        startGame.setOnClickListener(){
+            if(characters == ""){
+                startActivity(Intent(this, Characters::class.java))
+            } else {
+                startActivity(Intent(this, Levels::class.java))
+            }
         }
     }
 }
