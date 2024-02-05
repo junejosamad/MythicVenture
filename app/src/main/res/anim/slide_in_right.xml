@@ -2,13 +2,10 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:duration="http://schemas.android.com/apk/res-auto">
     <translate
-        android:fromXDelta="0"
-        android:toXDelta="-100"
-        android:duration = "500"
+        android:fromXDelta="0%p"
+        android:toXDelta="-82%p"
+        android:duration = "1000"
+        android:fillAfter= "false"
         />
 
-    <alpha
-        android:fromAlpha="1.0"
-        android:toAlpha="0.0"
-        android:duration="500" />
 </set>

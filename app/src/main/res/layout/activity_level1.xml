@@ -63,6 +63,7 @@
         android:progress="100"
         android:progressBackgroundTintMode="add"
         android:progressTint="#ffffff"
+        android:rotation="180"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -74,6 +75,53 @@
         android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/playerHealth"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/attackbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:contentDescription="this is attack button"
+        android:src="@drawable/attackbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <ImageButton
+        android:id="@+id/moveleft"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="this is attack button"
+        android:rotation="180"
+        android:src="@drawable/move"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <ImageButton
+        android:id="@+id/moveright"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="this is attack button"
+        android:src="@drawable/move"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/moveleft"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <ImageButton
+        android:id="@+id/moveup"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="this is attack button"
+        android:rotation="-90"
+        android:src="@drawable/move"
+        app:layout_constraintBottom_toTopOf="@+id/moveright"
+        app:layout_constraintEnd_toEndOf="@+id/moveright"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -96,12 +144,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
+
+        <ImageView
+            android:id="@+id/fireball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignEnd="@+id/player"
+            android:layout_marginEnd="15dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/fireball" />
+
+        <ImageView
+            android:id="@+id/fireball2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:rotation="-180"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/fireball" />
+
         <ImageView
             android:id="@+id/player"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
 
             android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
             app:srcCompat="@drawable/warrior" />
 
         <ImageView

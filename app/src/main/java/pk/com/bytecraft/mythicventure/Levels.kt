@@ -10,6 +10,7 @@ import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.transition.Visibility
 
@@ -60,7 +61,7 @@ class Levels : AppCompatActivity() {
         
 
         close.setOnClickListener {
-            finish()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         lvl1.setOnClickListener {
@@ -71,6 +72,7 @@ class Levels : AppCompatActivity() {
 
         lvl2.setOnClickListener {
             //startActivity(Intent(this, Level2::class.java))
+            Toast.makeText(this,"Development is in pending", Toast.LENGTH_LONG).show()
         }
         lvl3.setOnClickListener {
             //startActivity(Intent(this, Level3::class.java))
