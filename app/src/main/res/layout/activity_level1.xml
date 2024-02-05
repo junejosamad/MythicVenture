@@ -76,6 +76,17 @@
         app:layout_constraintBottom_toTopOf="@+id/playerHealth"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/attackbtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="100dp"
+        android:contentDescription="this is attack button"
+        android:src="@drawable/attackbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
     <TextView
         android:id="@+id/enemyName"
         android:layout_width="wrap_content"
@@ -95,6 +106,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <ImageView
+            android:id="@+id/fireball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:visibility="invisible"
+            app:srcCompat="@drawable/fireball" />
 
         <ImageView
             android:id="@+id/player"

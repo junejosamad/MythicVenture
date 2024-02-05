@@ -8,13 +8,14 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 
 var characters: String? = ""
 var enemy:String? = ""
-var unlockLevels:Int = 0
-var playerName:String? = ""
+//var unlockLevels:Int = 0
+var playerName:String? = "Samad"
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,13 +40,14 @@ class MainActivity : AppCompatActivity() {
             (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
                     View.SYSTEM_UI_FLAG_FULLSCREEN or
                     View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
-        if(playerName == ""){
-            
+        if(playerName != ""){
+           // val playerNameView:TextView = findViewById(R.id.playerName)
+          //  playerNameView.setText(playerName)
         }
         val startGame:Button = findViewById(R.id.startGame)
         val character:Button = findViewById(R.id.characters)
-        val inventory:Button = findViewById(R.id.inventory)
-        val setting:Button = findViewById(R.id.setting)
+       // val inventory:Button = findViewById(R.id.inventory)
+        //val setting:Button = findViewById(R.id.setting)
         val exitGame:Button = findViewById(R.id.exit)
 
         exitGame.setOnClickListener(){
