@@ -1,10 +1,5 @@
 package pk.com.bytecraft.mythicventure
 
-import android.os.Handler
-import android.view.MotionEvent
-import android.view.View
-import android.widget.ImageView
-import android.widget.RelativeLayout
 import kotlin.random.Random
 
 class GetAttack(){
