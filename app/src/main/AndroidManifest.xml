@@ -18,23 +18,22 @@
         <activity
             android:name=".Level1"
             android:exported="false"
-            android:screenOrientation="landscape"
-            />
+
+        android:screenOrientation="landscape"/>
         <activity
             android:name=".Levels"
             android:exported="false"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".Characters"
             android:exported="false"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

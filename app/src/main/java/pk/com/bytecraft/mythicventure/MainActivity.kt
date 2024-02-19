@@ -5,10 +5,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowInsetsController
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 
@@ -17,6 +14,7 @@ var enemy:String? = ""
 //var unlockLevels:Int = 0
 var playerName:String? = "Samad"
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.R)
@@ -25,43 +23,37 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_FULLSCREEN
+                )
 
-        // For devices running on Android 11 (API level 30) and above
-        val windowInsetsController = window.insetsController
-
-        windowInsetsController?.let {
-            it.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-            it.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
-
-        // For devices running on versions lower than Android 11
-        @Suppress("DEPRECATION")
-        window.decorView.systemUiVisibility =
-            (View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-                    View.SYSTEM_UI_FLAG_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
-        if(playerName != ""){
+        /*if(playerName != ""){
            // val playerNameView:TextView = findViewById(R.id.playerName)
           //  playerNameView.setText(playerName)
-        }
+        }*/
         val startGame:Button = findViewById(R.id.startGame)
         val character:Button = findViewById(R.id.characters)
        // val inventory:Button = findViewById(R.id.inventory)
         //val setting:Button = findViewById(R.id.setting)
         val exitGame:Button = findViewById(R.id.exit)
 
-        exitGame.setOnClickListener(){
+        exitGame.setOnClickListener{
             Toast.makeText(this, "Game Exited...", Toast.LENGTH_SHORT).show()
             finishAffinity()
         }
 
-        character.setOnClickListener(){
+        character.setOnClickListener{
 
             startActivity(Intent(this, Characters::class.java))
 
         }
 
-        startGame.setOnClickListener(){
+        startGame.setOnClickListener{
             if(characters == ""){
                 startActivity(Intent(this, Characters::class.java))
             } else {
